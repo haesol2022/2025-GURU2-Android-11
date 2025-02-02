@@ -1,5 +1,9 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">guru2</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+=======
+    <string name="app_name">Polling</string>
+>>>>>>> fb57e30344c62b80b669c8366a4fc1310ef84664
 </resources>

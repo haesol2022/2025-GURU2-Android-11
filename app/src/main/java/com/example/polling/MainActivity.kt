@@ -2,18 +2,15 @@ package com.example.polling
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
-import android.widget.FrameLayout
-import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.polling.MeetingListFragment
-import  com.example.polling.SummarizeFragment
+import com.example.polling.MeetingFragment
+import com.example.polling.CalendarFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         val tvFindPassword = findViewById<TextView>(R.id.tv_find_password)
 
         // 캘린더 UI 요소들
-        val btnCalendar = findViewById<ImageButton>(R.id.btn_calendar)
-        val btnMeeting = findViewById<ImageButton>(R.id.btn_meeting)
+        val btnCalendar = findViewById<Button>(R.id.btn_calendar)
+        val btnMeeting = findViewById<Button>(R.id.btn_meeting)
 
         // 로그인 버튼 클릭 이벤트
         btnLogin.setOnClickListener {
@@ -51,15 +48,8 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                     // 로그인 성공 시 MainActivity 종료
                     finish()  // MainActivity 종료
-                    // 새로운 Activity로 이동 (회의록 페이지)
-                    val intent = Intent(this, CalendarActivity::class.java)
-                    startActivity(intent)
-
-                    finish()
-                    // 로그인 성공 시 이동할 레이아웃 ("추후 입력 필요" 지우고 입력)
-                    // val intent = Intent(this, "추후 입력 필요"::class.java)
-                    // startActivity(intent)
-
+                    // MainActivity 내에서 MeetingFragment로 이동
+                    replaceFragment(MeetingFragment())
                 } else {
                     Toast.makeText(this, "아이디 또는 비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
                 }
@@ -87,6 +77,7 @@ class MainActivity : AppCompatActivity() {
 
         // 미팅 버튼 클릭 시
         btnMeeting.setOnClickListener {
+            // 미팅 화면으로 이동 (프래그먼트 변경)
             replaceFragment(MeetingFragment())
         }
 

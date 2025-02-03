@@ -1,5 +1,8 @@
 package com.example.polling.adapter
 
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,11 +43,56 @@ class MeetingAdapter(private val meetings: MutableList<String>, private val onDe
     }
 
     override fun onBindViewHolder(holder: MeetingViewHolder, position: Int) {
-        holder.etMeetingTitle.setText(meetings[position])
+        val meetingTitle = if (position in meetings.indices) {
+            meetings[position]
+        } else {
+            ""
+        }
 
+        holder.etMeetingTitle.setText(meetingTitle)
+
+        // EditText에서 포커스가 벗어나면 리스트의 해당 항목에 값을 저장
         holder.etMeetingTitle.setOnFocusChangeListener { _, hasFocus ->
-            if (!hasFocus) {
-                meetings[position] = holder.etMeetingTitle.text.toString()
+            if (!hasFocus && position in meetings.indices) {
+                val updatedValue = holder.etMeetingTitle.text.toString()
+                meetings[position] = updatedValue
+                Log.d("MeetingAdapter", "Position: $position, Updated Value: $updatedValue") // 로그 추가
+            }
+        }
+
+        // addTextChangedListener에서 TextWatcher 객체 사용
+        holder.etMeetingTitle.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence?, start: Int, count: Int, after: Int) {
+                // TextWatcher의 beforeTextChanged 메서드, 현재는 구현하지 않음
+            }
+
+            override fun onTextChanged(charSequence: CharSequence?, start: Int, before: Int, count: Int) {
+                if (position in meetings.indices) {
+                    val updatedValue = charSequence.toString()
+                    meetings[position] = updatedValue
+                    Log.d("MeetingAdapter", "Position: $position, Updated Value: $updatedValue") // 로그 추가
+                }
+            }
+
+            override fun afterTextChanged(editable: Editable?) {
+                // TextWatcher의 afterTextChanged 메서드, 현재는 구현하지 않음
+            }
+        })
+    }
+
+    // 항목 삭제 시 meetings 리스트에서 데이터를 반영, 변경 사항을 RecyclerView에 알림
+    fun removeItem(position: Int) {
+        if (position in meetings.indices) {
+            // 리스트에서 해당 항목 삭제
+            val removedItem = meetings[position] // 삭제할 항목 값 확인
+            meetings.removeAt(position)
+            Log.d("MeetingAdapter", "Removed Position: $position, Removed Item: $removedItem") // 로그 추가
+
+            // RecyclerView 갱신
+            notifyItemRemoved(position)
+            if (position < meetings.size) {
+                // 리스트 범위 내에서만 업데이트를 갱신
+                notifyItemRangeChanged(position, meetings.size - position)
             }
         }
     }

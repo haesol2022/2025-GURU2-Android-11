@@ -1,10 +1,8 @@
-package com.example.guru2
+package com.example.polling
 
-import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
-import android.text.method.TextKeyListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,11 +11,9 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.TimePicker
 import androidx.fragment.app.Fragment
-import java.text.SimpleDateFormat
+import com.example.guru2.R
 import java.util.Calendar
-import java.util.Locale
 
 class MeetingFragment : Fragment() {
 
@@ -157,6 +153,3 @@ class MeetingFragment : Fragment() {
         timePickerDialog.show()
     }
 }
-
-
-

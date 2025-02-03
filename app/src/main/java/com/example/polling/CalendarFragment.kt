@@ -1,45 +1,26 @@
-package com.example.guru2
+package com.example.polling
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.res.ColorStateList
-import android.graphics.Color
-import android.graphics.Typeface
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.ShapeDrawable
-import android.graphics.drawable.shapes.OvalShape
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.os.Parcel
-import android.os.Parcelable
-import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.CalendarView
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContentProviderCompat.requireContext
-import com.google.android.material.datepicker.DayViewDecorator
+import androidx.fragment.app.Fragment
+import com.example.guru2.R
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import java.text.SimpleDateFormat
-import java.util.Calendar
 import java.util.Date
 import java.util.Locale
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -83,7 +64,8 @@ class CalendarFragment : Fragment() {
         val context = requireContext()
 
         // todo_list.xml을 인플레이트하여 가져오기
-        val todoLayout = LayoutInflater.from(context).inflate(R.layout.todo_list, todoListLayout, false)
+        val todoLayout = LayoutInflater.from(context)
+            .inflate(R.layout.todo_list, todoListLayout, false)
 
         // 체크박스, EditText, Button, ImageButton 등 참조
         val checkBox: CheckBox = todoLayout.findViewById(R.id.checkBox)
@@ -166,13 +148,3 @@ class CalendarFragment : Fragment() {
         }
     }
 }
-
-    // dp를 px로 변환하는 확장 함수
-    private fun Int.dpToPx(context: Context): Int {
-        return (this * context.resources.displayMetrics.density).toInt()
-    }
-
-
-
-
-

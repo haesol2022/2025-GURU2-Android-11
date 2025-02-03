@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
+    <!-- 상단 앱 이름 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

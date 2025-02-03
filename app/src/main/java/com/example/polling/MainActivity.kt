@@ -1,47 +1,42 @@
 package com.example.polling
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.polling.ui.theme.PollingTheme
+import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.example.guru2.R
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            PollingTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        val btnCalendar = findViewById<ImageButton>(R.id.btn_calendar)
+        val btnMeeting = findViewById<ImageButton>(R.id.btn_meeting)
+
+        // 처음 실행 시 캘린더 프래그먼트 표시
+        if (savedInstanceState == null) {
+            replaceFragment(CalendarFragment())
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        // 캘린더 버튼 클릭 시
+        btnCalendar.setOnClickListener {
+            replaceFragment(CalendarFragment())
+        }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PollingTheme {
-        Greeting("Android")
+        // 미팅 버튼 클릭 시
+        btnMeeting.setOnClickListener {
+            replaceFragment(MeetingFragment())
+        }
+
+
     }
+
+    // 프래그먼트 변경 함수
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
+
 }

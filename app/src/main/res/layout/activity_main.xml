@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:hint="아이디를 입력해주세요"
         android:background="@drawable/edit_text_border"
+        android:textColor="@android:color/black"
         android:padding="16dp"
         android:layout_marginBottom="12dp"
         android:textColorHint="#AAAAAA" />
@@ -47,6 +48,7 @@
         android:layout_height="wrap_content"
         android:hint="비밀번호를 입력해주세요"
         android:background="@drawable/edit_text_border"
+        android:textColor="@android:color/black"
         android:padding="16dp"
         android:layout_marginBottom="24dp"
         android:inputType="textPassword"

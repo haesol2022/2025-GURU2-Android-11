@@ -5,24 +5,20 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- 타이틀바 -->
-    <LinearLayout
-        android:id="@+id/title_bar"
+    <!-- 헤더 -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="#4579FF"
-        android:gravity="center_vertical">
+        android:layout_height="75dp"
+        android:background="@color/blue">
 
-        <TextView
-            android:id="@+id/title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="   플링"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_gravity="center" />
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="23dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo" />
+    </RelativeLayout>
 
     <!-- 툴바 -->
     <LinearLayout
@@ -126,7 +122,7 @@
     <!-- 멤버 리스트 -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="347dp" >
+        android:layout_height="329dp" >
 
         <LinearLayout
             android:id="@+id/team_list"

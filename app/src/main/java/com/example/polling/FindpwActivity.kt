@@ -1,4 +1,4 @@
-package com.example.sample2
+package com.example.polling
 
 import android.os.Bundle
 import android.view.Window

@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:hint="아이디를 입력해주세요"
         android:background="@drawable/edit_text_border"
+        android:textColor="@android:color/black"
         android:padding="16dp"
         android:layout_marginBottom="12dp"
         android:textColorHint="#AAAAAA" />
@@ -47,6 +48,7 @@
         android:layout_height="wrap_content"
         android:hint="비밀번호를 입력해주세요"
         android:background="@drawable/edit_text_border"
+        android:textColor="@android:color/black"
         android:padding="16dp"
         android:layout_marginBottom="24dp"
         android:inputType="textPassword"
@@ -97,4 +99,12 @@
             android:textColor="#888888"
             android:textSize="14sp" />
     </LinearLayout>
+
+    <!-- 프래그먼트가 들어갈 공간 -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
+        android:visibility="gone" /> <!-- 초기에는 프래그먼트를 숨깁니다. -->
 </LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EAEFFF"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical">
+
+    <!-- 문서 아이콘 -->
+    <ImageView
+        android:id="@+id/ivDocumentIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/file_text"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- 회의록 제목 (EditText) -->
+    <EditText
+        android:id="@+id/etMeetingTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:hint="회의록 제목 입력"
+        android:background="@null"
+        android:padding="8dp"/>
+
+    <!-- 삭제 버튼 (X 아이콘) -->
+    <ImageView
+        android:id="@+id/btnDeleteMeeting"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/close"
+        android:layout_marginStart="8dp"/>
+</LinearLayout>

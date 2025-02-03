@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:overScrollMode="always"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 상단 프로젝트 선택 -->
+        <LinearLayout
+            android:id="@+id/project_select_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/project_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/folder" />
+
+            <TextView
+                android:id="@+id/project_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="프로젝트 생성하기"
+                android:textColor="#333333"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/project_dropdown_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_expand_more_24" />
+        </LinearLayout>
+
+        <!-- 드롭다운 메뉴 (숨겨진 상태로 시작) -->
+
+        <LinearLayout
+            android:id="@+id/project_dropdown_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:visibility="gone">
+            <!-- 프로젝트 목록이 들어갈 부분 -->
+
+            <!-- 프로젝트 생성 버튼 -->
+            <Button
+                android:id="@+id/btn_addProject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="#4478FD"
+                android:text="프로젝트 추가하기"
+                android:textSize="13dp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD" />
+
+        <!-- 달력 표시 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <!-- 달력 Placeholder -->
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:mcv_selectionColor="#4579FF"
+                app:mcv_showOtherDates="all"
+                app:mcv_firstDayOfWeek="sunday"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/todo_section_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="To Do List"
+                android:paddingStart="15dp"
+                android:textColor="#4579FF"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/add_todo_button"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:backgroundTint="#4478FD"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="추가하기"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"/>
+
+        <!-- 투두리스트 영역 -->
+        <LinearLayout
+            android:id="@+id/todo_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <!-- 투두 리스트 항목들이 추가될 곳 -->
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

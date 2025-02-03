@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="16sp"
+        android:textColor="@android:color/black"
         android:hint="회의록 제목 입력"
         android:background="@null"
         android:padding="8dp"/>

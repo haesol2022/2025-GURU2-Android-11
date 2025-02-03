@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:overScrollMode="always"
     android:background="#FFFFFF">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
+
+        <!-- 헤더 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/blue">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="23dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/logo" />
+        </RelativeLayout>
 
         <!-- 상단 프로젝트 선택 -->
         <LinearLayout
@@ -19,7 +32,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:paddingBottom="16dp">
+            android:paddingBottom="16dp"
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/project_icon"
@@ -54,15 +68,18 @@
         <!-- 달력 표시 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="340dp"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:paddingStart="55dp"
+            android:paddingEnd="30dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
             <!-- 달력 Placeholder -->
             <com.prolificinteractive.materialcalendarview.MaterialCalendarView
                 android:id="@+id/calendarView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
                 app:mcv_selectionColor="#E95757"
                 app:mcv_selectionMode="range"
                 app:mcv_showOtherDates="all"
@@ -75,7 +92,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
 
             <TextView
                 android:id="@+id/todo_section_title"
@@ -89,11 +108,13 @@
 
             <Button
                 android:id="@+id/add_todo_button"
-                android:layout_width="110dp"
-                android:layout_height="45dp"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
                 android:backgroundTint="#4478FD"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="6dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/rounded_button"
                 android:text="추가하기"
                 android:textColor="#FFFFFF"
                 android:textSize="15dp" />
@@ -105,16 +126,18 @@
             android:background="#DDDDDD"/>
 
         <!-- 투두리스트 영역 -->
-        <LinearLayout
-            android:id="@+id/todo_list_layout"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="10dp">
-            <!-- 투두 리스트 항목들이 추가될 곳 -->
+            android:layout_height="110dp">
 
-
-        </LinearLayout>
-
+            <LinearLayout
+                android:id="@+id/todo_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <!-- 투두 리스트 항목들이 추가될 곳 -->
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-</ScrollView>
+</LinearLayout>

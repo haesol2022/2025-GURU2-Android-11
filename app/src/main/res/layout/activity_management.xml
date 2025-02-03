@@ -8,7 +8,7 @@
     <!-- 헤더 -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:background="@color/blue">
 
         <ImageView
@@ -48,16 +48,13 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center_vertical" />
-
-        <ImageButton
-            android:id="@+id/share_button"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/share_icon"
-            android:scaleType="centerInside" />
     </LinearLayout>
+
+    <!-- 회색 구분선 (툴바 아래) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD" />
 
     <!-- 멤버 관리 -->
     <LinearLayout
@@ -72,6 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="아이디 :"
+            android:textColorHint="#666666"
+            android:textColor="@android:color/black"
             android:background="@drawable/input_background"
             android:padding="12dp" />
 
@@ -80,6 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="역할 :"
+            android:textColorHint="#666666"
+            android:textColor="@android:color/black"
             android:background="@drawable/input_background"
             android:padding="12dp"
             android:layout_marginTop="8dp" />
@@ -94,7 +95,8 @@
             <Button
                 android:id="@+id/button_input"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_button"
                 android:text="입력"
                 android:backgroundTint="#4579FF"
                 android:textColor="#FFFFFF"
@@ -103,7 +105,8 @@
             <Button
                 android:id="@+id/button_edit"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_button"
                 android:text="수정"
                 android:backgroundTint="#4579FF"
                 android:textColor="#FFFFFF"
@@ -112,24 +115,32 @@
             <Button
                 android:id="@+id/button_delete"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_button"
                 android:text="삭제"
                 android:backgroundTint="#4579FF"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
     </LinearLayout>
 
+    <!-- 회색 구분선 (멤버 관리 아래) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD" />
+
     <!-- 멤버 리스트 -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="329dp" >
+        android:layout_height="291dp">
 
         <LinearLayout
             android:id="@+id/team_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingStart="16dp"
+            android:paddingTop="6dp">
 
         </LinearLayout>
 

@@ -29,42 +29,42 @@
         android:layout_marginBottom="24dp" />
 
     <!-- 아이디 입력 -->
-    <EditText
-        android:id="@+id/et_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="아이디를 입력해주세요"
-        android:background="@drawable/edit_text_border"
-        android:textColor="@android:color/black"
-        android:padding="16dp"
-        android:layout_marginBottom="12dp"
-        android:textColorHint="#AAAAAA" />
 
     <!-- 비밀번호 입력 -->
     <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
+        android:id="@+id/et_id"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:hint="비밀번호를 입력해주세요"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/edit_text_border"
-        android:textColor="@android:color/black"
+        android:hint="아이디를 입력해주세요"
         android:padding="16dp"
-        android:layout_marginBottom="24dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#AAAAAA" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_border"
+        android:hint="비밀번호를 입력해주세요"
         android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
         android:textColorHint="#AAAAAA" />
 
     <!-- 로그인 버튼 -->
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="로그인"
-        android:backgroundTint="#4579FF"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:padding="16dp"
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
-        android:layout_marginTop="8dp" />
+        android:backgroundTint="#4579FF"
+        android:padding="16dp"
+        android:text="로그인"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
 
     <!-- 하단 옵션 -->
     <LinearLayout

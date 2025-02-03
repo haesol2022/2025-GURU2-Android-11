@@ -1,45 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<<<<<<< HEAD
 
     <!-- 인터넷 및 네트워크 상태 확인 권한 -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:usesCleartextTraffic="true"
-=======
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-
-    <application
->>>>>>> origin/sol
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-<<<<<<< HEAD
         android:label="polling"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Polling"
-        tools:targetApi="31">
-        <activity
-            android:name="com.example.polling.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-=======
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
-        <activity android:name=".MainActivity"
+        <activity android:name="com.example.polling.MainActivity"
             android:theme="@style/Theme.AppCompat"
             android:exported="true">
             <intent-filter>
@@ -58,13 +37,17 @@
             android:exported="true">
         </activity>
 
-        <activity android:name=".MeetingListActivity"
+        <activity android:name=".CalendarActivity"
             android:theme="@style/Theme.AppCompat"
             android:exported="true">
         </activity>
 
 
->>>>>>> origin/sol
+        <activity android:name=".MeetingListActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

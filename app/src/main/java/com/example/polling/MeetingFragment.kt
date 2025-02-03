@@ -12,7 +12,7 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.guru2.R
+import com.example.polling.R
 import java.util.Calendar
 
 class MeetingFragment : Fragment() {

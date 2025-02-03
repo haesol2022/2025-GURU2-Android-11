@@ -16,19 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-<<<<<<< HEAD
         //캘린더 추가
-        maven { url = uri("https://jitpack.io") }
-    }
-}
-
-rootProject.name = "guru2"
-include(":app")
-=======
+        maven { url = uri("https://jitpack.io") } // 수지님 변경사항
     }
 }
 
 rootProject.name = "Polling"
 include(":app")
- 
->>>>>>> origin/sol

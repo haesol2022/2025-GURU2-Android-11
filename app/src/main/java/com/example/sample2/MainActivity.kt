@@ -36,10 +36,13 @@ class MainActivity : AppCompatActivity() {
                 val isValid = dbHelper.loginUser(id, password)
                 if (isValid) {
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
-
+                    finish()
                     // 로그인 성공 시 이동할 레이아웃 ("추후 입력 필요" 지우고 입력)
                     // val intent = Intent(this, "추후 입력 필요"::class.java)
                     // startActivity(intent)
+
+                    val intent = Intent(this, ManagementActivity::class.java)
+                    startActivity(intent)
 
                 } else {
                     Toast.makeText(this, "아이디 또는 비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show()

@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                     // 로그인 성공 시 MainActivity 종료
                     finish()  // MainActivity 종료
                     // 새로운 Activity로 이동 (회의록 페이지)
-                    val intent = Intent(this, MeetingListActivity::class.java)
+                    val intent = Intent(this, CalendarActivity::class.java)
                     startActivity(intent)
 
                     finish()

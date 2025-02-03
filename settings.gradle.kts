@@ -16,6 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+<<<<<<< HEAD
         //캘린더 추가
         maven { url = uri("https://jitpack.io") }
     }
@@ -23,3 +24,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "guru2"
 include(":app")
+=======
+    }
+}
+
+rootProject.name = "Polling"
+include(":app")
+ 
+>>>>>>> origin/sol

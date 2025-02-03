@@ -1,5 +1,6 @@
 package com.example.polling
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.polling.R
@@ -27,6 +29,8 @@ class SummarizeFragment : Fragment() {
     private lateinit var etNotes: EditText
     private lateinit var tvSummary: TextView
     private lateinit var btnSummarize: Button
+    private lateinit var btnBack: ImageView
+
 
     private val OPENAI_API_KEY = BuildConfig.OPENAI_API_KEY  // OpenAI API 키 입력
     private val API_URL = "https://api.openai.com/v1/chat/completions"
@@ -36,9 +40,12 @@ class SummarizeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_summarize, container, false)
 
+
         etNotes = view.findViewById(R.id.etNotes)
         tvSummary = view.findViewById(R.id.tvSummary)
         btnSummarize = view.findViewById(R.id.btnSummarize)
+        btnBack = view.findViewById(R.id.btnBack) as ImageView
+
 
         // Meeting 데이터 받기
         val meetingTitle = arguments?.getString("meetingTitle")
@@ -56,6 +63,13 @@ class SummarizeFragment : Fragment() {
                 tvSummary.visibility = View.VISIBLE
                 tvSummary.text = "회의록 내용을 입력해주세요."
             }
+        }
+
+        btnBack.setOnClickListener {
+            val intent = Intent(activity, MeetingListActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP // 기존 MeetingListActivity가 있다면 재사용
+            startActivity(intent)
+            activity?.finish() // 현재 Activity 종료
         }
 
         return view

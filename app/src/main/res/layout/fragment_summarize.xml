@@ -60,12 +60,9 @@
         android:layout_weight="1"
         android:clipChildren="false">
 
-        <!-- 스크롤 가능한 회의록 입력 필드 -->
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:fillViewport="true">
+
+        <!-- 회의록 입력 필드를 스크롤 가능하게 처리 -->
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -75,26 +72,38 @@
                 <EditText
                     android:id="@+id/etNotes"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="250dp"
                     android:hint="회의록 내용을 입력하세요"
                     android:inputType="textMultiLine"
                     android:gravity="top"
                     android:padding="16dp"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp"
-                    android:scrollbars="vertical" />
+                    android:scrollbars="vertical"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#A3A3A3" />
 
                 <TextView
                     android:id="@+id/tvSummary"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="300dp"
                     android:layout_marginTop="16dp"
-                    android:visibility="gone"
                     android:textSize="15sp"
                     android:textColor="@android:color/black"
-                    android:background="#F5F5F5"
-                    android:padding="16dp" />
+                    android:background="#EAEFFF"
+                    android:padding="16dp"
+                    android:visibility="invisible"
+                    android:scrollHorizontally="false"
+                android:ellipsize="none"
+                />
             </LinearLayout>
-        </ScrollView>
+
 
         <!-- AI 요약 버튼 -->
         <Button

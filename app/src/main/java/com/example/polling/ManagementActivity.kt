@@ -1,13 +1,16 @@
 package com.example.polling
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.graphics.Color
 
 class ManagementActivity : AppCompatActivity() {
     private lateinit var dbHelper: DatabaseHelper
@@ -34,6 +37,12 @@ class ManagementActivity : AppCompatActivity() {
         buttonEdit = findViewById<Button>(R.id.button_edit)
         buttonDelete = findViewById<Button>(R.id.button_delete)
 
+        // 네비게이션바 속성
+        val homeButton = findViewById<ImageButton>(R.id.home_button)
+        // val calendarButton = findViewById<ImageButton>(R.id.calendar_button)
+        val editButton = findViewById<ImageButton>(R.id.edit_button)
+        val userButton = findViewById<ImageButton>(R.id.user_button)
+
         buttonInput.setOnClickListener {
             addMemberToList()
         }
@@ -44,6 +53,35 @@ class ManagementActivity : AppCompatActivity() {
 
         buttonDelete.setOnClickListener {
             deleteMemberFromList()
+        }
+
+        // 홈 버튼 클릭 시
+        homeButton.setOnClickListener {
+            // 투두리스트 화면으로 이동
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 일정 관리 버튼 클릭 시
+        /*calendarButton.setOnClickListener {
+            // 일정 관리 화면으로 이동
+            val intent = Intent(this, MeetingActivity::class.java) // 미팅액티비티가 생기면 써주세요
+            startActivity(intent)
+        }*/
+
+        // 회의록 버튼 클릭 시
+        editButton.setOnClickListener {
+            // 회의록 화면으로 이동
+            val intent = Intent(this, MeetingListActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        // 유저 버튼 클릭 시
+        userButton.setOnClickListener {
+            // 멤버 관리 화면으로 이동
+            val intent = Intent(this, ManagementActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -94,6 +132,7 @@ class ManagementActivity : AppCompatActivity() {
             text = "$id ($nickname)\n$role" // 아이디와 역할 표시
             tag = role // 최신 역할 정보를 저장
             textSize = 16f
+            setTextColor(context.getColor(R.color.gray))
             setPadding(8, 8, 8, 8)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,

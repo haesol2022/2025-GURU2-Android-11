@@ -1,4 +1,4 @@
-package com.example.sample2
+package com.example.polling
 
 import android.content.ContentValues
 import android.content.Context

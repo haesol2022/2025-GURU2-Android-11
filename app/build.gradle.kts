@@ -73,6 +73,9 @@ android {
         implementation(libs.androidx.material3)
         implementation(libs.androidx.fragment.ktx)
 
+        implementation ("com.google.android.material:material:1.8.0")
+        implementation ("androidx.appcompat:appcompat:1.6.0")
+        implementation ("com.google.android.material:material:<version>")
 
 
         // 네트워크 통신 라이브러리 추가 (OkHttp, Gson)

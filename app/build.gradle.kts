@@ -65,6 +65,8 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
 
     implementation("androidx.activity:activity-ktx:1.2.4") // 수지님
+    // implementation("com.naver.maps:map-sdk:3.16.0") 네이버 지도 sdk
+
 
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)

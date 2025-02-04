@@ -1,9 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Guru2" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+<?xml version="1.0" encoding="utf-8"?>
 
-    <style name="Theme.Guru2" parent="Base.Theme.Guru2" />
+<resources>
+<style name="Theme.Polling" parent="android:Theme.Material.Light.NoActionBar" >
+    </style>
 </resources>

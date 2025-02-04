@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 기본 MaterialCalendarView 스타일 -->
+    <style name="CustomCalendarStyle">
+        <!-- 날짜 텍스트 크기 -->
+        <item name="android:textSize">30sp</item>
+
+    </style>
+</resources>

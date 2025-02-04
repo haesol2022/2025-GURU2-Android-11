@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- 아이디 입력 영역 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:textColor="@android:color/black">
+
+            <!-- 아이디 입력 -->
+            <EditText
+                android:id="@+id/et_register_id"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="아이디를 입력해 주세요"
+                android:padding="12dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="#AAAAAA" />
+
+            <!-- 중복 확인 버튼 -->
+            <Button
+                android:id="@+id/btn_check_id"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_button"
+                android:text="중복 확인"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4579FF"
+                android:padding="12dp" />
+        </LinearLayout>
+
+        <!-- 비밀번호 입력 -->
+        <EditText
+            android:id="@+id/et_register_password"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호를 입력해 주세요"
+            android:background="@drawable/edit_text_border"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:inputType="textPassword"
+            android:textColorHint="#AAAAAA"
+            android:textColor="@android:color/black"/>
+
+        <!-- 비밀번호 확인 -->
+        <EditText
+            android:id="@+id/et_register_password_confirm"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호를 재입력해 주세요"
+            android:background="@drawable/edit_text_border"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:inputType="textPassword"
+            android:textColorHint="#AAAAAA"
+            android:textColor="@android:color/black"/>
+
+        <!-- 닉네임 입력 -->
+        <EditText
+            android:id="@+id/et_register_nickname"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:hint="닉네임을 입력해 주세요"
+            android:background="@drawable/edit_text_border"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:textColorHint="#AAAAAA"
+            android:textColor="@android:color/black"/>
+
+        <!-- 이메일 입력 -->
+        <EditText
+            android:id="@+id/et_register_email"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:hint="이메일을 입력해 주세요"
+            android:background="@drawable/edit_text_border"
+            android:padding="12dp"
+            android:layout_marginBottom="5dp"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#AAAAAA"
+            android:textColor="@android:color/black"/>
+
+        <!-- 회원가입 버튼 -->
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_button"
+            android:text="회원 가입"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4579FF"
+            android:padding="16dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>

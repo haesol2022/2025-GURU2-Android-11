@@ -1,4 +1,4 @@
-package com.example.guru2
+package com.example.polling
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
@@ -156,6 +156,3 @@ class MeetingFragment : Fragment() {
         timePickerDialog.show()
     }
 }
-
-
-

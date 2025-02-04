@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginBottom="8dp"
-        android:visibility="gone">  <!-- 처음에는 숨겨짐 -->
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"

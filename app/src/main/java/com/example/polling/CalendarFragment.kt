@@ -1,9 +1,8 @@
-package com.example.guru2
+package com.example.polling
 
-import DotDecorator
+import com.example.polling.DotDecorator
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -18,10 +17,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.TextView
-import androidx.core.util.TypedValueCompat.dpToPx
-import androidx.core.util.TypedValueCompat.pxToDp
-import androidx.core.view.marginBottom
-import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
@@ -322,4 +317,3 @@ class CalendarFragment : Fragment() {
     }
 
 }
-

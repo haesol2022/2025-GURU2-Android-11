@@ -16,10 +16,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://jitpack.io") } // 수지님 변경사항
     }
 }
 
-rootProject.name = "guru2"
+rootProject.name = "Polling"
 include(":app")
- 

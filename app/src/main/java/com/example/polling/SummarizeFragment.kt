@@ -1,6 +1,7 @@
 package com.example.polling
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,8 @@ class SummarizeFragment : Fragment() {
         etNotes = view.findViewById(R.id.etNotes)
         tvSummary = view.findViewById(R.id.tvSummary)
         btnSummarize = view.findViewById(R.id.btnSummarize)
+
+        tvSummary.movementMethod = ScrollingMovementMethod.getInstance()
 
         // Meeting 데이터 받기
         val meetingTitle = arguments?.getString("meetingTitle")

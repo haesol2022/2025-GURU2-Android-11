@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="vertical">
 
     <!-- 헤더 -->
@@ -57,41 +58,54 @@
         android:layout_weight="1"
         android:clipChildren="false">
 
-        <!-- 스크롤 가능한 회의록 입력 필드 -->
-        <ScrollView
+
+        <!-- 회의록 입력 필드를 스크롤 가능하게 처리 -->
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:fillViewport="true">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+
+            <EditText
+                android:id="@+id/etNotes"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="250dp"
+                android:gravity="top"
+                android:hint="회의록 내용을 입력하세요"
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:scrollbars="vertical"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
 
-                <EditText
-                    android:id="@+id/etNotes"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:hint="회의록 내용을 입력하세요"
-                    android:inputType="textMultiLine"
-                    android:gravity="top"
-                    android:padding="16dp"
-                    android:textSize="15sp"
-                    android:scrollbars="vertical" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#A3A3A3" />
+
+            <ScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="272dp">
 
                 <TextView
                     android:id="@+id/tvSummary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:visibility="gone"
-                    android:textSize="15sp"
+                    android:background="#EAEFFF"
+                    android:padding="16dp"
+                    android:scrollbars="vertical"
                     android:textColor="@android:color/black"
-                    android:background="#F5F5F5"
-                    android:padding="16dp" />
-            </LinearLayout>
-        </ScrollView>
+                    android:textSize="15sp" />
+            </ScrollView>
+
+
+        </LinearLayout>
+
 
         <!-- AI 요약 버튼 -->
         <Button
@@ -99,9 +113,9 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="40dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/ai_btn"
             android:contentDescription="AI 요약 버튼" />
     </RelativeLayout>

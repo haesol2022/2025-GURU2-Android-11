@@ -21,8 +21,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "guru2"
-include(":app")
-
 rootProject.name = "Polling"
 include(":app")

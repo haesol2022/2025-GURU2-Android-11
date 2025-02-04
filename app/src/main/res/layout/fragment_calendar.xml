@@ -80,6 +80,7 @@
                 android:id="@+id/calendarView"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
+                app:mcv_headerTextAppearance="@style/CalendarHeaderTextAppearance"
                 app:mcv_selectionColor="#E95757"
                 app:mcv_selectionMode="range"
                 app:mcv_showOtherDates="all"

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:overScrollMode="always"
     android:background="#FFFFFF">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <!-- 헤더 -->
         <RelativeLayout
@@ -28,11 +30,13 @@
 
         <!-- 상단 프로젝트 선택 -->
         <LinearLayout
+            android:id="@+id/project_select_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:paddingBottom="16dp"
+            android:clickable="true"
             android:padding="16dp">
 
             <ImageView
@@ -65,6 +69,25 @@
             android:layout_height="1dp"
             android:background="#DDDDDD" />
 
+        <!-- 드롭다운 메뉴 (숨겨진 상태로 시작) -->
+        <LinearLayout
+            android:id="@+id/project_dropdown_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_addProject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="#4478FD"
+                android:text="프로젝트 추가하기"
+                android:textSize="13dp" />
+        </LinearLayout>
+
         <!-- 달력 표시 -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,7 +98,6 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp">
 
-            <!-- 달력 Placeholder -->
             <com.prolificinteractive.materialcalendarview.MaterialCalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="300dp"
@@ -85,9 +107,9 @@
                 app:mcv_selectionMode="range"
                 app:mcv_showOtherDates="all"
                 app:mcv_firstDayOfWeek="sunday"/>
-
         </LinearLayout>
 
+        <!-- 투두리스트 영역 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -124,13 +146,12 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#DDDDDD"/>
+            android:background="#DDDDDD" />
 
-        <!-- 투두리스트 영역 -->
+        <!-- 투두리스트 목록 -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="110dp">
-
             <LinearLayout
                 android:id="@+id/todo_list_layout"
                 android:layout_width="match_parent"
@@ -141,4 +162,4 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

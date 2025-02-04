@@ -39,7 +39,7 @@ class CalendarActivity : AppCompatActivity() {
         // 일정 관리 버튼 클릭 시
         calendarButton.setOnClickListener {
             // 일정 관리 화면으로 이동
-            val intent = Intent(this, MeetingActivity::class.java) // 미팅액티비티가 생기면 써주세요
+            val intent = Intent(this, MeetingActivity::class.java)
             startActivity(intent)
         }
 

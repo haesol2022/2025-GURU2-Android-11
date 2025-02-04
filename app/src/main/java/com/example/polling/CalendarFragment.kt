@@ -1,6 +1,8 @@
 package com.example.polling
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -72,6 +74,20 @@ class CalendarFragment : Fragment() {
         val todoEditText: EditText = todoLayout.findViewById(R.id.todoEditText)
         val percentButton: Button = todoLayout.findViewById(R.id.percentButton)
         val deleteButton: ImageButton = todoLayout.findViewById(R.id.deleteButton)
+
+        // 체크박스 색상 설정
+        val colorStateList = ColorStateList(
+            arrayOf(
+                intArrayOf(android.R.attr.state_checked),
+                intArrayOf(-android.R.attr.state_checked)
+            ),
+            intArrayOf(
+                Color.parseColor("#4579FF"),  // 체크 상태의 색상
+                Color.parseColor("#AAAAAA")   // 비체크 상태의 색상
+            )
+        )
+
+        checkBox.buttonTintList = colorStateList
 
         // 오늘 날짜를 기본 선택
         val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())

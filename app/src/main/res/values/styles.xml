@@ -4,6 +4,12 @@
     <style name="CustomCalendarStyle">
         <!-- 날짜 텍스트 크기 -->
         <item name="android:textSize">30sp</item>
+    </style>
 
+    <!-- 캘린더 설정 -->
+    <style name="CalendarHeaderTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">#000000</item> <!-- 텍스트 색상을 검정으로 설정 -->
+        <item name="android:textStyle">bold</item> <!-- 텍스트 스타일을 볼드로 설정 -->
+        <item name="android:textSize">18sp</item> <!-- 텍스트 크기를 18sp로 설정 -->
     </style>
 </resources>

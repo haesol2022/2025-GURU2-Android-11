@@ -47,7 +47,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="425dp"
         android:fillViewport="true">
 
 
@@ -64,22 +64,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="8dp"></LinearLayout>
+                android:padding="8dp">
 
-            <!-- 새로운 회의록 작성 버튼 -->
-            <Button
-                android:id="@+id/add_meeting_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="#D9D9D9"
-                android:gravity="start"
-                android:padding="14dp"
-                android:paddingStart="30dp"
-                android:text="+ 새로운 회의 일정 추가하기"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <!-- 새로운 회의 일정 추가 버튼 -->
+    <Button
+        android:id="@+id/add_meeting_button"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="13dp"
+        android:text="+ 새로운 회의 일정 추가하기"
+        android:background="#F5F5F5"
+        android:textColor="#A3A3A3"
+        android:padding="16dp"
+        android:textSize="16sp"/>
 </LinearLayout>

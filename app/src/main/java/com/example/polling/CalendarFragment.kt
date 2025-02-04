@@ -3,6 +3,8 @@ package com.example.polling
 import com.example.polling.DotDecorator
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -17,10 +19,10 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
-
 
 class CalendarFragment : Fragment() {
     private lateinit var calendarView: MaterialCalendarView
@@ -82,6 +84,9 @@ class CalendarFragment : Fragment() {
                     calendarView.addDecorator(dotDecorator)
                     addedDotDecorators[selectedCalendarDay] = dotDecorator // 도트 저장
                 }
+            } else {
+                // 날짜를 선택하지 않았을 경우, Toast 메시지 표시
+                Toast.makeText(context, "날짜를 선택해주세요", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -104,6 +109,20 @@ class CalendarFragment : Fragment() {
 
         // 추가된 항목에 선택된 날짜 설정
         dayText.text = date
+
+        // 체크박스 색상 설정
+        val colorStateList = ColorStateList(
+            arrayOf(
+                intArrayOf(android.R.attr.state_checked),
+                intArrayOf(-android.R.attr.state_checked)
+            ),
+            intArrayOf(
+                Color.parseColor("#4579FF"),  // 체크 상태의 색상
+                Color.parseColor("#AAAAAA")   // 비체크 상태의 색상
+            )
+        )
+
+        checkBox.buttonTintList = colorStateList
 
         // 체크박스 클릭 시 0.5초 후 삭제
         checkBox.setOnCheckedChangeListener { _, isChecked ->

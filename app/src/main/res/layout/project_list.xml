@@ -4,14 +4,14 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_marginBottom="10dp"
-    android:background="#F2F2F2"
+    android:background="@drawable/rounded_project_list"
     >
     <TextView
         android:id="@+id/project_name_set"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:padding="12dp"
+        android:padding="15dp"
         android:text="123445"
         android:textColor="#515151"
         android:textSize="15sp"/>
@@ -28,9 +28,9 @@
 
     <ImageButton
         android:id="@+id/deleteButton"
-        android:layout_width="40dp"
-        android:paddingEnd="15dp"
+        android:layout_width="15dp"
         android:layout_height="match_parent"
+        android:layout_marginEnd="15dp"
         android:background="#F2F2F2"
         android:scaleType="centerInside"
         android:src="@drawable/x" />

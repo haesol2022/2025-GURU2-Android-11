@@ -61,10 +61,14 @@ class MeetingFragment : Fragment() {
                 detailsLayout.visibility = View.VISIBLE
                 meetingTitleEditText.isFocusable = true // 제목 입력 가능
                 meetingTitleEditText.isEnabled = true
+                meetingTitleEditText.isFocusableInTouchMode = true
+
             } else {
                 detailsLayout.visibility = View.GONE
                 meetingTitleEditText.isFocusable = false // 제목 입력 불가능
                 meetingTitleEditText.isEnabled = false
+                meetingTitleEditText.isFocusableInTouchMode = false
+
             }
         }
 

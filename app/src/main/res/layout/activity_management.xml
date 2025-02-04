@@ -31,11 +31,11 @@
 
         <ImageButton
             android:id="@+id/folder_button"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/folder_icon"
+            android:src="@drawable/folder"
             android:scaleType="centerInside" />
 
         <TextView
@@ -43,7 +43,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="   GURU2 프로젝트"
+            android:text="GURU2 프로젝트"
+            android:layout_marginStart="13dp"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold"

@@ -43,8 +43,8 @@ class FindpwActivity : AppCompatActivity() {
             }
         }
 
+        // 뒤로 가기
         btnBack.setOnClickListener {
-            // 로그인 성공 시 FindpwActivity 종료
             finish()  // FindpwActivity 종료
 
             // 새로운 Activity로 이동 (로그인 페이지)

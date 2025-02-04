@@ -13,15 +13,10 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.polling.R
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
-import com.google.gson.stream.JsonReader
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
-import java.io.StringReader
 import java.io.IOException
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody

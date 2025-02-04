@@ -4,11 +4,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- 헤더 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="23dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo" />
+    </RelativeLayout>
+
     <!-- Fragment를 위한 컨테이너 -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="627dp" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
 
     <!-- 네비게이션바 -->
     <LinearLayout
@@ -55,3 +71,5 @@
             android:scaleType="centerInside" />
     </LinearLayout>
 </LinearLayout>
+
+

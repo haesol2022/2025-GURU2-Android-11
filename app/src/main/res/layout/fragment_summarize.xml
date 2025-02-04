@@ -32,7 +32,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/back_arrow"
-            android:contentDescription="뒤로가기" />
+            android:contentDescription="뒤로 가기" />
 
         <TextView
             android:id="@+id/tvNotesTitle"

@@ -31,10 +31,6 @@ class MainActivity : AppCompatActivity() {
         val tvRegister = findViewById<TextView>(R.id.tv_register)
         val tvFindPassword = findViewById<TextView>(R.id.tv_find_password)
 
-        // 캘린더 UI 요소들
-        val btnCalendar = findViewById<ImageButton>(R.id.btn_calendar)
-        val btnMeeting = findViewById<ImageButton>(R.id.btn_meeting)
-
         // 로그인 버튼 클릭 이벤트
         btnLogin.setOnClickListener {
             val id = etId.text.toString()
@@ -66,19 +62,6 @@ class MainActivity : AppCompatActivity() {
         tvFindPassword.setOnClickListener {
             val intent = Intent(this, FindpwActivity::class.java)
             startActivity(intent)
-        }
-
-        // 캘린더 버튼 클릭 시
-        btnCalendar.setOnClickListener {
-            // 캘린더 화면으로 이동
-            val intent = Intent(this, CalendarActivity::class.java)
-            startActivity(intent)
-        }
-
-        // 미팅 버튼 클릭 시
-        btnMeeting.setOnClickListener {
-            // 미팅 화면으로 이동 (프래그먼트 변경)
-            replaceFragment(MeetingFragment())
         }
 
         // 처음 실행 시 캘린더 프래그먼트 표시

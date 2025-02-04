@@ -103,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="To Do List"
+                android:textStyle="bold"
                 android:paddingStart="15dp"
                 android:textColor="#4579FF"
                 android:textSize="18sp" />
@@ -117,6 +118,7 @@
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/rounded_button"
                 android:text="추가하기"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="15dp" />
         </LinearLayout>

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginTop="8dp"
-        android:background="#E6EBFF"
+        android:background="@drawable/rounded_meeting_item"
         android:clickable="true"
         android:focusable="true"
         android:orientation="horizontal"

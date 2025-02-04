@@ -1,5 +1,6 @@
 package com.example.polling
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
@@ -24,6 +25,7 @@ class FindpwActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.et_findpw_email)
         val btnSubmit = findViewById<Button>(R.id.btn_findpw_submit)
         val tvResult = findViewById<TextView>(R.id.tv_findpw_result)
+        val btnBack = findViewById<Button>(R.id.btn_back)
 
         btnSubmit.setOnClickListener {
             val id = etId.text.toString()
@@ -40,27 +42,33 @@ class FindpwActivity : AppCompatActivity() {
                 }
             }
         }
+
+        btnBack.setOnClickListener {
+            // 로그인 성공 시 FindpwActivity 종료
+            finish()  // FindpwActivity 종료
+
+            // 새로운 Activity로 이동 (로그인 페이지)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     // 비밀번호 찾기 함수
     private fun findPassword(id: String, email: String): String? {
         val db = dbHelper.readableDatabase
         val query = """
-            SELECT $COLUMN_PASSWORD 
-            FROM ${DatabaseHelper.TABLE_USERS} 
-            WHERE ${DatabaseHelper.COLUMN_ID} = ? AND ${DatabaseHelper.COLUMN_EMAIL} = ?
-        """
+        SELECT password
+        FROM memberTBL
+        WHERE id = ? AND email = ?
+    """.trimIndent()
+
         val cursor = db.rawQuery(query, arrayOf(id, email))
 
         var password: String? = null
         if (cursor.moveToFirst()) {
-            password = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_PASSWORD))
+            password = cursor.getString(cursor.getColumnIndex("password"))
         }
         cursor.close()
         return password
-    }
-
-    companion object {
-        const val COLUMN_PASSWORD = "password"
     }
 }

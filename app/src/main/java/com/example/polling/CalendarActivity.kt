@@ -21,11 +21,20 @@ class CalendarActivity : AppCompatActivity() {
         val editButton = findViewById<ImageButton>(R.id.edit_button)
         val userButton = findViewById<ImageButton>(R.id.user_button)
 
+        // MainActivity에서 전달된 id와 nickname 가져오기
+        val userId = intent.getStringExtra("USER_ID") ?: ""
+        val userNickname = intent.getStringExtra("USER_NICKNAME") ?: ""
+
         // 기존에 만들어 놓은 CalendarFragment를 액티비티에 추가
         if (savedInstanceState == null) {
-            val fragment = CalendarFragment()
+            val fragment = CalendarFragment().apply {
+                arguments = Bundle().apply {
+                    putString("USER_ID", userId)
+                    putString("USER_NICKNAME", userNickname)
+                }
+            }
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment) // 레이아웃에 프래그먼트 추가
+                .replace(R.id.fragment_container, fragment)
                 .commit()
         }
 

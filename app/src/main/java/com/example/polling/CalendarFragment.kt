@@ -25,6 +25,10 @@ import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 
 class CalendarFragment : Fragment() {
+    private lateinit var dbHelper: DatabaseHelper
+    private var userId: String = ""
+    private var userNickname: String = ""
+
     private lateinit var calendarView: MaterialCalendarView
     private lateinit var todoListLayout: LinearLayout
     private lateinit var addTodoButton: Button
@@ -37,6 +41,15 @@ class CalendarFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_calendar, container, false)
+
+        // DatabaseHelper 초기화
+        dbHelper = DatabaseHelper(requireContext())
+
+        // 전달받은 사용자 정보 가져오기
+        arguments?.let {
+            userId = it.getString("USER_ID", "")
+            userNickname = it.getString("USER_NICKNAME", "")
+        }
 
         // UI 컴포넌트 초기화
         calendarView = view.findViewById(R.id.calendarView)
@@ -271,6 +284,10 @@ class CalendarFragment : Fragment() {
             // 프로젝트 이름이 비어있지 않다면 드롭다운에 TextView 추가
             if (projectName.isNotEmpty()) {
                 addProjectToDropdown(projectName)
+
+                // 프로젝트 정보를 projectTBL에 추가
+                dbHelper.insertProject(projectName, userId, userNickname)
+                Toast.makeText(context, "$projectName, $userId, $userNickname", Toast.LENGTH_SHORT).show()
             }
         }
 

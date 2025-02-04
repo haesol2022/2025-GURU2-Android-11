@@ -41,9 +41,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 val isValid = dbHelper.loginUser(id, password)
                 if (isValid) {
+                    val nickname = dbHelper.getUserNickname(id) // 닉네임 가져오기
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                     // 로그인 성공 시 MainActivity 종료
-                    val intent = Intent(this, CalendarActivity::class.java)
+                    val intent = Intent(this, CalendarActivity::class.java).apply {
+                        putExtra("USER_ID", id)
+                        putExtra("USER_NICKNAME", nickname)
+                    }
                     startActivity(intent)
                     finish() // 기존 액티비티 종료
                 } else {

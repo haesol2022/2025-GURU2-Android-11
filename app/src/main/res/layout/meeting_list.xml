@@ -73,7 +73,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#E6EBFF"
+            android:background="@drawable/rounded_meeting_item"
             android:orientation="horizontal"
             android:padding="20dp">
 

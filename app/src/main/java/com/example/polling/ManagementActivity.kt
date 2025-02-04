@@ -30,6 +30,13 @@ class ManagementActivity : AppCompatActivity() {
 
         dbHelper = DatabaseHelper(this)
 
+        // 전달받은 프로젝트 이름 가져오기
+        val projectName = intent.getStringExtra("PROJECT_NAME") ?: ""
+
+        // 프로젝트 이름을 화면에 표시할 TextView가 있다면 설정
+        val projectTitleTextView = findViewById<TextView>(R.id.project_name)
+        projectTitleTextView.text = projectName
+
         inputId = findViewById(R.id.input_id)
         inputRole = findViewById(R.id.input_role)
         buttonInput = findViewById(R.id.button_input)

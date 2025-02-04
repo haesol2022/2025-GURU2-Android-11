@@ -89,15 +89,16 @@ class ManagementActivity : AppCompatActivity() {
     private fun findNicknameById(id: String): String? {
         val db = dbHelper.readableDatabase
         val query = """
-        SELECT ${DatabaseHelper.COLUMN_NICKNAME} 
-        FROM ${DatabaseHelper.TABLE_USERS} 
-        WHERE ${DatabaseHelper.COLUMN_ID} = ?
-        """
+        SELECT nickname
+        FROM memberTBL
+        WHERE id = ?
+    """.trimIndent()
+
         val cursor = db.rawQuery(query, arrayOf(id))
 
         var nickname: String? = null
         if (cursor.moveToFirst()) {
-            nickname = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_NICKNAME))
+            nickname = cursor.getString(cursor.getColumnIndex("nickname"))
         }
         cursor.close()
         return nickname

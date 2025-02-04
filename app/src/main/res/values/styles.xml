@@ -12,4 +12,5 @@
         <item name="android:textStyle">bold</item> <!-- 텍스트 스타일을 볼드로 설정 -->
         <item name="android:textSize">18sp</item> <!-- 텍스트 크기를 18sp로 설정 -->
     </style>
+
 </resources>

@@ -1,5 +1,6 @@
 package com.example.polling
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
@@ -24,6 +25,7 @@ class RegisterActivity : AppCompatActivity() {
         val etNickname = findViewById<EditText>(R.id.et_register_nickname)
         val etEmail = findViewById<EditText>(R.id.et_register_email)
         val btnRegister = findViewById<Button>(R.id.btn_register)
+        val btnBack = findViewById<Button>(R.id.btn_back)
 
         // 아이디 중복 확인
         btnCheckId.setOnClickListener {
@@ -61,6 +63,15 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(this, "회원 가입에 실패했습니다.", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+
+        btnBack.setOnClickListener {
+            // 로그인 성공 시 FindpwActivity 종료
+            finish()  // FindpwActivity 종료
+
+            // 새로운 Activity로 이동 (로그인 페이지)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

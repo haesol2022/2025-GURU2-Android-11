@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="아이디 :"
-            android:textColorHint="#666666"
+            android:textColorHint="#AAAAAA"
             android:textColor="@android:color/black"
             android:background="@drawable/input_background"
             android:padding="12dp" />
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="역할 :"
-            android:textColorHint="#666666"
+            android:textColorHint="#AAAAAA"
             android:textColor="@android:color/black"
             android:background="@drawable/input_background"
             android:padding="12dp"
@@ -98,6 +98,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_button"
                 android:text="입력"
+                android:textStyle="bold"
                 android:backgroundTint="#4579FF"
                 android:textColor="#FFFFFF"
                 android:layout_marginEnd="8dp" />
@@ -108,6 +109,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_button"
                 android:text="수정"
+                android:textStyle="bold"
                 android:backgroundTint="#4579FF"
                 android:textColor="#FFFFFF"
                 android:layout_marginEnd="8dp" />
@@ -118,6 +120,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_button"
                 android:text="삭제"
+                android:textStyle="bold"
                 android:backgroundTint="#4579FF"
                 android:textColor="#FFFFFF" />
         </LinearLayout>

@@ -15,7 +15,7 @@ class MeetingListActivity : AppCompatActivity() {
 
         // 네비게이션바 속성
         val homeButton = findViewById<ImageButton>(R.id.home_button)
-        // val calendarButton = findViewById<ImageButton>(R.id.calendar_button)
+        val calendarButton = findViewById<ImageButton>(R.id.calendar_button)
         val editButton = findViewById<ImageButton>(R.id.edit_button)
         val userButton = findViewById<ImageButton>(R.id.user_button)
 
@@ -32,11 +32,11 @@ class MeetingListActivity : AppCompatActivity() {
         }
 
         // 일정 관리 버튼 클릭 시
-        /*calendarButton.setOnClickListener {
+        calendarButton.setOnClickListener {
             // 일정 관리 화면으로 이동
             val intent = Intent(this, MeetingActivity::class.java) // 미팅액티비티가 생기면 써주세요
             startActivity(intent)
-        }*/
+        }
 
         // 회의록 버튼 클릭 시
         editButton.setOnClickListener {

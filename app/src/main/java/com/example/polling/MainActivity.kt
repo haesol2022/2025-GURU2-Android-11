@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -32,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         val tvFindPassword = findViewById<TextView>(R.id.tv_find_password)
 
         // 캘린더 UI 요소들
-        val btnCalendar = findViewById<Button>(R.id.btn_calendar)
-        val btnMeeting = findViewById<Button>(R.id.btn_meeting)
+        val btnCalendar = findViewById<ImageButton>(R.id.btn_calendar)
+        val btnMeeting = findViewById<ImageButton>(R.id.btn_meeting)
 
         // 로그인 버튼 클릭 이벤트
         btnLogin.setOnClickListener {
@@ -47,9 +48,9 @@ class MainActivity : AppCompatActivity() {
                 if (isValid) {
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                     // 로그인 성공 시 MainActivity 종료
-                    finish()  // MainActivity 종료
-                    // MainActivity 내에서 MeetingFragment로 이동
-                    replaceFragment(MeetingFragment())
+                    val intent = Intent(this, CalendarActivity::class.java)
+                    startActivity(intent)
+                    finish() // 기존 액티비티 종료
                 } else {
                     Toast.makeText(this, "아이디 또는 비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
                 }

@@ -62,8 +62,14 @@ class CalendarActivity : AppCompatActivity() {
 
         // 유저 버튼 클릭 시
         userButton.setOnClickListener {
-            // 멤버 관리 화면으로 이동
-            val intent = Intent(this, ManagementActivity::class.java)
+            // 현재 CalendarFragment에서 프로젝트 이름 가져오기
+            val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as? CalendarFragment
+            val projectName = fragment?.getSelectedProjectName() ?: ""
+
+            // ManagementActivity로 프로젝트 이름 전달
+            val intent = Intent(this, ManagementActivity::class.java).apply {
+                putExtra("PROJECT_NAME", projectName)
+            }
             startActivity(intent)
         }
     }

@@ -352,4 +352,8 @@ class CalendarFragment : Fragment() {
         projectDropdownLayout.addView(projectView, 0) // 0번째 위치에 추가
     }
 
+    fun getSelectedProjectName(): String {
+        val projectNameTextView = projectSelectLayout.findViewById<TextView>(R.id.project_name)
+        return projectNameTextView.text.toString()
+    }
 }

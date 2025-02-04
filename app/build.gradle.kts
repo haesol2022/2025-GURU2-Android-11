@@ -25,6 +25,8 @@ android {
 
         // API 키를 BuildConfig에 설정
         buildConfigField("String", "OPENAI_API_KEY", "\"${localProperties.getProperty("OPENAI_API_KEY")}\"")
+        buildConfigField("String", "NAVER_MAPS_CLIENT_ID", "\"${localProperties.getProperty("NAVER_MAPS_CLIENT_ID")}\"")
+
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,6 +38,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
         }
     }
 
@@ -65,7 +68,8 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
 
     implementation("androidx.activity:activity-ktx:1.2.4") // 수지님
-    // implementation("com.naver.maps:map-sdk:3.16.0") 네이버 지도 sdk
+    implementation("com.naver.maps:map-sdk:3.20.0") // 네이버 지도 sdk
+    implementation("com.google.android.gms:play-services-location:17.0.0")
 
 
     implementation(libs.androidx.ui)
@@ -76,7 +80,7 @@ dependencies {
 
     implementation ("com.google.android.material:material:1.8.0")
     implementation ("androidx.appcompat:appcompat:1.6.0")
-    implementation ("com.google.android.material:material:<version>")
+
 
 
     // 네트워크 통신 라이브러리 추가 (OkHttp, Gson)
@@ -95,6 +99,7 @@ dependencies {
     // 캘린더 추가 의존성
     implementation("com.github.prolificinteractive:material-calendarview:2.0.1")
     implementation("com.jakewharton.threetenabp:threetenabp:1.1.1")
+    implementation(libs.play.services.maps)
 
     // 테스트 의존성
     testImplementation(libs.junit)

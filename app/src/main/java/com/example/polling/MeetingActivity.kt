@@ -46,6 +46,7 @@ class MeetingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         // MeetingFragment를 추가
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()

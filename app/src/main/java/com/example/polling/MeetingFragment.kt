@@ -2,13 +2,16 @@ package com.example.polling
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -19,12 +22,21 @@ class MeetingFragment : Fragment() {
 
     private lateinit var meetingLayout: LinearLayout
     private lateinit var addMeetingButton: Button
+    private lateinit var meetingAddressEditText: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // `fragment_meeting.xml`을 먼저 inflate
         val view = inflater.inflate(R.layout.fragment_meeting, container, false)
+
+        // `meeting_list.xml`을 동적으로 inflate
+        val meetingListView = inflater.inflate(R.layout.meeting_list, container, false)
+
+
+        // meeting_list.xml의 EditText 초기화
+        val meetingAddressEditText = meetingListView.findViewById<EditText>(R.id.meeting_address)
 
         // 뷰들 찾기
         meetingLayout = view.findViewById(R.id.meeting_layout)
@@ -36,8 +48,17 @@ class MeetingFragment : Fragment() {
             addMeetingItem()
         }
 
+        // FragmentResultListener 설정
+        parentFragmentManager.setFragmentResultListener("mapAddress", this) { _, bundle ->
+            val address = bundle.getString("address")
+            if (address != null) {
+                meetingAddressEditText.setText(address) // 주소를 EditText에 입력
+            }
+        }
+
         return view
     }
+
 
     // 회의 항목을 추가하는 함수
     private fun addMeetingItem() {
@@ -115,6 +136,13 @@ class MeetingFragment : Fragment() {
         val deleteButton: ImageButton = meetingItemView.findViewById(R.id.deleteButton)
         deleteButton.setOnClickListener {
             meetingLayout.removeView(meetingItemView)
+        }
+
+        // 'meeting_icon4' ImageView 클릭 시 MainActivity로 이동
+        val meetingIcon: ImageView = meetingItemView.findViewById(R.id.meeting_icon4)
+        meetingIcon.setOnClickListener {
+            val intent = Intent(requireContext(), MapActivity::class.java)
+            startActivity(intent)
         }
 
         // '회의 항목'을 버튼 위에 추가

@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.polling.MeetingListFragment
+import com.example.polling.MapActivity
 
 class MeetingListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

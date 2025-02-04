@@ -89,6 +89,9 @@ class CalendarFragment : Fragment() {
 
         checkBox.buttonTintList = colorStateList
 
+        todoEditText.hint = " 할 일을 입력해 주세요"
+        todoEditText.setHintTextColor(Color.parseColor("#666666")) // 힌트를 회색으로 설정
+
         // 오늘 날짜를 기본 선택
         val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         selectedDate = sdf.format(Date())  // 기본 날짜 설정

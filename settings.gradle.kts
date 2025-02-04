@@ -17,9 +17,12 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         //캘린더 추가
-        maven { url = uri("https://jitpack.io") } // 수지님 변경사항
+        maven { url = uri("https://jitpack.io") }
     }
 }
+
+rootProject.name = "guru2"
+include(":app")
 
 rootProject.name = "Polling"
 include(":app")

@@ -1,6 +1,7 @@
 package com.example.polling
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -62,6 +63,7 @@ class SummarizeFragment : Fragment() {
             } else {
                 tvSummary.visibility = View.VISIBLE
                 tvSummary.text = "회의록 내용을 입력해주세요."
+                tvSummary.setTextColor(Color.parseColor("#666666")) // 텍스트 색상을 회색으로 설정
             }
         }
 

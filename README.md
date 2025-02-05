@@ -1,5 +1,5 @@
 # 2025-GURU2-Android-11
-### 최종 작업물은 main에
+### 최종 작업물은 main에 업로드
 
 git branch (자기 이름 - 브런치 생성) <br>
 git checkout (자기가 만든 브런치 이름 - 브런치 이동)
